@@ -56,7 +56,6 @@ public class ExpenseController {
 	
 	@DeleteMapping("delete/{id}")
 	public ResponseEntity<?> deleteExpense(@PathVariable(name="id", required = true) String id) {
-		log.info("id--->"+id);
 		expenseServiceImpl.deleteExpense(id);
 		return ResponseEntity.ok().build();
 	}
