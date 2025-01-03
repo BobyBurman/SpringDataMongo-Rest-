@@ -58,11 +58,9 @@ public class ExpenseServiceImpl implements ExpenseService{
 
 	@Override
 	public void deleteExpense(String id) {
-		log.info("id--->"+id);
 		Expense savedExpense=expenseRepository.findById(id)
 				.orElseThrow(()->new RuntimeException(
 						String.format("connot find Expense by ID %s",id)));
-		log.info("iddddd--->"+id);
 		expenseRepository.deleteById(id);
 	}
 
